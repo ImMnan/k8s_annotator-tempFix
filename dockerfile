@@ -8,6 +8,7 @@ COPY k8s-annotator .
 ENV SHIP_ID=""
 ENV HARBOUR_ID=""
 ENV NAMESPACE=""
+ENV INTERVAL="3m"
 
 # Create a non-root user and group
 RUN addgroup -g 1337 -S appgroup && adduser -u 1337 -S appuser -G appgroup \

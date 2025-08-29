@@ -48,8 +48,6 @@ spec:
           value: 63cd1cc281374f2d9743cc73
         - name: NAMESPACE
           value: default
-        - name: INTERVAL
-          value: "2"
         name: ctr-annotator
         image: immnan/k8s-annotator:0.1.0-beta
         imagePullPolicy: "Always"

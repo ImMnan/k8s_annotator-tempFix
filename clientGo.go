@@ -48,7 +48,7 @@ func (a *AgentMetaData) getPods(cs *ClientSet) ([]string, error) {
 		if pod.Annotations["cluster-autoscaler.kubernetes.io/safe-to-evict"] == "" &&
 			a.HarbourID == pod.Labels["BZM_HARBOR_ID"] &&
 			a.ShipID == pod.Labels["BZM_SHIP_ID"] {
-			fmt.Printf("[%v][INFO] Found taurus-cloud Pod: %s\n", time.Now().Format("2006-01-02 15:04:05"), pod.Name)
+			fmt.Printf("\n[%v][INFO] Found taurus-cloud Pod: %s", time.Now().Format("2006-01-02 15:04:05"), pod.Name)
 			taurusPods = append(taurusPods, pod.Name)
 		}
 	}
@@ -60,7 +60,7 @@ func (a AgentMetaData) addAnnotations(cs *ClientSet, podNames []string) error {
 	for _, podName := range podNames {
 		patch := []byte(`{"metadata":{"annotations":{"cluster-autoscaler.kubernetes.io/safe-to-evict": "false"}}}`)
 		_, err := cs.clientset.CoreV1().Pods(a.Ns).Patch(ctx, podName, types.StrategicMergePatchType, patch, metav1.PatchOptions{})
-		fmt.Printf("\n[%v][INFO] Added annotation to pod: %s\n", time.Now().Format("2006-01-02 15:04:05"), podName)
+		fmt.Printf("\n[%v][INFO] Added annotation to pod: %s", time.Now().Format("2006-01-02 15:04:05\n"), podName)
 		if err != nil {
 			return err
 		}
@@ -73,9 +73,7 @@ type annotationUpdate interface {
 	addAnnotations(cs *ClientSet, podNames []string) error
 }
 
-func podUpdateAnnotaion(a annotationUpdate) {
-	cs := &ClientSet{}
-	cs.getClientSet()
+func podUpdateAnnotaion(a annotationUpdate, cs *ClientSet) {
 
 	podList, err := a.getPods(cs)
 	if err != nil {

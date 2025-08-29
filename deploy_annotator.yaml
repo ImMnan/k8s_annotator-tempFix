@@ -49,7 +49,7 @@ spec:
         - name: NAMESPACE
           value: default
         name: ctr-annotator
-        image: immnan/k8s-annotator:0.1.0-beta
+        image: immnan/k8s-annotator:0.1.4-beta
         imagePullPolicy: "Always"
         resources:
           requests:

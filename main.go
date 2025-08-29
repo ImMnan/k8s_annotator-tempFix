@@ -16,13 +16,15 @@ func main() {
 	agentmd.HarbourID = os.Getenv("HARBOUR_ID")
 	agentmd.Ns = os.Getenv("NAMESPACE")
 
-	fmt.Printf("\n[%v][INFO] Provided:\n ShipID: %s\n, HarbourID: %s\n, Namespace: %s", time.Now().Format("2006-01-02 15:04:05"), agentmd.ShipID, agentmd.HarbourID, agentmd.Ns)
+	fmt.Printf("\n[%v][INFO] Provided:\n ShipID: %s,\n HarbourID: %s,\n Namespace: %s\n", time.Now().Format("2006-01-02 15:04:05"), agentmd.ShipID, agentmd.HarbourID, agentmd.Ns)
 	// Parse interval string to integer (minutes)
+	cs := &ClientSet{}
+	cs.getClientSet()
 
-	ticker := time.NewTicker(2 * time.Minute)
+	ticker := time.NewTicker(5 * time.Minute)
 	defer ticker.Stop()
 	for range ticker.C {
-		podUpdateAnnotaion(&agentmd)
+		podUpdateAnnotaion(&agentmd, cs)
 	}
 
 }

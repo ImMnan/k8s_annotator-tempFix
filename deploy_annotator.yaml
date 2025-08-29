@@ -1,0 +1,71 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: default
+  name: pod-reader
+rules:
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["pods", "deployments", "replicasets"]
+  verbs: ["get", "watch", "list", "update", "patch"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: read-pods-binding
+  namespace: default
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: default
+roleRef:
+  kind: Role #this must be Role or ClusterRole
+  name: pod-reader # this must match the name of the Role or ClusterRole you wish to bind to
+  apiGroup: rbac.authorization.k8s.io
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taurus-annotator
+  labels:
+    app: taurus-annotator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: annotator
+  template:
+    metadata:
+      labels:
+        app: annotator
+    spec:
+      containers:
+      - env:
+        - name: SHIP_ID
+          value: 6878f45ea92774ac2c01ea64
+        - name: HARBOUR_ID
+          value: 63cd1cc281374f2d9743cc73
+        - name: NAMESPACE
+          value: default
+        - name: INTERVAL
+          value: "2"
+        name: ctr-annotator
+        image: immnan/k8s-annotator:0.1.0-beta
+        imagePullPolicy: "Always"
+        resources:
+          requests:
+            cpu: 100m
+            memory: 256Mi
+          limits:
+            cpu: 200m
+            memory: 512Mi
+        volumeMounts:
+          - name: annotation-tmp
+            mountPath: /tmp/annotation
+      volumes:
+        - name: annotation-tmp
+          emptyDir: {}
+      restartPolicy: "Always"
+
+  

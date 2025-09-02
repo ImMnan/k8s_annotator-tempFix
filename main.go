@@ -21,7 +21,7 @@ func main() {
 	cs := &ClientSet{}
 	cs.getClientSet()
 
-	ticker := time.NewTicker(5 * time.Minute)
+	ticker := time.NewTicker(2 * time.Minute)
 	defer ticker.Stop()
 	for range ticker.C {
 		podUpdateAnnotaion(&agentmd, cs)

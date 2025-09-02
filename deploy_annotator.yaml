@@ -28,6 +28,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: taurus-annotator
+  namespace: default
   labels:
     app: taurus-annotator
 spec:

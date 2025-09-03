@@ -69,6 +69,7 @@ spec:
         volumeMounts:
           - name: annotation-tmp
             mountPath: /tmp/annotation
+            readOnly: true
       volumes:
         - name: annotation-tmp
           emptyDir: {}

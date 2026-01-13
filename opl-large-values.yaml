@@ -131,8 +131,8 @@ tolerationExecutors:
 
 #Used to configure the k8s nodeSelector field to match specific node labels for the Crane as well as child resources. Must be in JSON format.
 nodeSelectorCrane:
-  enable: no
-  syntax:  {"label_1": "label_1_value", "label_2": "label_2_value"}
+  enable: yes
+  syntax:  {"argo": "large-scale"}
 nodeSelectorExecutor:
   enable: no
   syntax:  {"label_1": "label_1_value", "label_2": "label_2_value"}
@@ -156,19 +156,19 @@ resourcesCrane:
     MEM: 512Mi 
     storage: #100
   limits:
-    CPU: #1 
-    MEM: #2Gi
+    CPU: 500m 
+    MEM: 2Gi
     storage: #1024
 
 # CPU & Memory limits & requests for resources for child resources. You can also specify ephemeral storage limits for the child resources.
 resourcesExecutors: 
   requests:           
-    CPU: 1000m        
-    MEM: 4096         # This value should be an integer unlike other values that supports k8s standard for declaring resource limits/requests.
+    CPU: 2000m        
+    MEM: 8192        # This value should be an integer unlike other values that supports k8s standard for declaring resource limits/requests.
     storage: #100     
   limits:
-    CPU: #2
-    MEM: #8Gi
+    CPU: 4
+    MEM: 16Gi
     storage: #1024
 
 

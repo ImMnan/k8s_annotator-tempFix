@@ -168,8 +168,8 @@ resourcesExecutors:
     MEM: 4096         # This value should be an integer unlike other values that supports k8s standard for declaring resource limits/requests.
     storage: #100     
   limits:
-    CPU: #2
-    MEM: #8Gi
+    CPU: 2
+    MEM: 8Gi
     storage: #1024
 
 

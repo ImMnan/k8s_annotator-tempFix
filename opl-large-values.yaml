@@ -7,7 +7,7 @@ deployment:
                      # Specifies whether a ServiceAccount should be created, if already exists, the value should be false. 
     create: false
                      # The name of the ServiceAccount to use, keep empty to use default ServiceAccount.
-    name: crane-sa   # sample-serviceAccount-name
+    name:    # sample-serviceAccount-name
                      # Bind secrets to the ServiceAccount to satisfy cluster policies.
     secrets:
     annotations:

@@ -5,14 +5,11 @@ deployment:
   clusterrole:       # Mention if you wish to use the existing clusterrole
   serviceAccount:
                      # Specifies whether a ServiceAccount should be created, if already exists, the value should be false. 
-    create: true
+    create: false
                      # The name of the ServiceAccount to use, keep empty to use default ServiceAccount.
-    name: crane-sa   # sample-serviceAccount-name
+    name:    # sample-serviceAccount-name
                      # Bind secrets to the ServiceAccount to satisfy cluster policies.
     secrets:
-    - opl-large-token 
-    - opl-small-token
-    - opl-staging-token
     #annotations:
                      # This is a sample  annotation. You can add any annotations here. Comment out if not needed.                    
     #  eks.amazonaws.com/role-arn: arn:aws:iam::123456789012:role/example-role

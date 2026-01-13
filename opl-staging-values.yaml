@@ -10,11 +10,13 @@ deployment:
     name: crane-sa   # sample-serviceAccount-name
                      # Bind secrets to the ServiceAccount to satisfy cluster policies.
     secrets:
-    - crane-tokens
-    annotations:
+    - opl-large-token 
+    - opl-small-token
+    - opl-staging-token
+    #annotations:
                      # This is a sample  annotation. You can add any annotations here. Comment out if not needed.                    
-      eks.amazonaws.com/role-arn: arn:aws:iam::123456789012:role/example-role
-      custom.annotation/key: custom-value    
+    #  eks.amazonaws.com/role-arn: arn:aws:iam::123456789012:role/example-role
+    #  custom.annotation/key: custom-value    
   restartPolicy:     # Defaults to Always as recommended
 
 env: 
@@ -26,7 +28,7 @@ env:
 # If the auth token, harbour id and ship id are stored in a kubernetes secret, enable the below section and provide the secret name and keys.
   fromSecret:  
     enable: yes
-    secretName: crane-tokens
+    secretName: opl-staging-token
     authTokenKey: auth_token
     harbourIdKey: harbor_id
     shipIdKey: ship_id

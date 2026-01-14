@@ -157,8 +157,8 @@ resourcesCrane:
     MEM: 512Mi 
     storage: #100
   limits:
-    CPU: #1 
-    MEM: #2Gi
+    CPU: 500m 
+    MEM: 2Gi
     storage: #1024
 
 # CPU & Memory limits & requests for resources for child resources. You can also specify ephemeral storage limits for the child resources.

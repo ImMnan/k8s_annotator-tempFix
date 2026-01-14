@@ -156,19 +156,19 @@ resourcesCrane:
     MEM: 512Mi 
     storage: #100
   limits:
-    CPU: 500m 
-    MEM: 2Gi
+    CPU: #1 
+    MEM: #2Gi
     storage: #1024
 
 # CPU & Memory limits & requests for resources for child resources. You can also specify ephemeral storage limits for the child resources.
 resourcesExecutors: 
   requests:           
-    CPU: 500m        
-    MEM: 2048         # This value should be an integer unlike other values that supports k8s standard for declaring resource limits/requests.
+    CPU: 1000m        
+    MEM: 4096         # This value should be an integer unlike other values that supports k8s standard for declaring resource limits/requests.
     storage: #100     
   limits:
-    CPU: 1
-    MEM: 4Gi
+    CPU: #2
+    MEM: #8Gi
     storage: #1024
 
 

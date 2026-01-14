@@ -61,7 +61,7 @@ imageOverride:
 
 # Proxy configurations here, change enable to yes, followed by http/https configuration
 proxy:
-  enable: yes
+  enable: no
   # If you have authentication required for your proxy, then you will need to add username:password@server:port
   http_path: "http://10.10.10.1:8080" 
   https_path: "http://10.10.10.1:8080"   

@@ -63,8 +63,8 @@ imageOverride:
 proxy:
   enable: yes
   # If you have authentication required for your proxy, then you will need to add username:password@server:port
-  http_path: http://squid-proxy-service.proxy-dev.svc:3128 #"http://10.10.10.1:8080" 
-  https_path: http://squid-proxy-service.proxy-dev.svc:3128# #"http://10.10.10.1:8080"   
+  http_path: http://squid-proxy-service.proxy-dev:3128 #"http://10.10.10.1:8080" 
+  https_path: http://squid-proxy-service.proxy-dev:3128 #"http://10.10.10.1:8080"   
   # The NO_PROXY settings for 127.0.0.1 and localhost (provided below) are required for the Service Virtualization integration and transaction-based Mock Services to work. If you do not enable any HTTP_PROXY or HTTPS_PROXY settings, you can skip the NO_PROXY setting.
   no_proxy: "kubernetes.default,127.0.0.1,localhost,dempblaze.com"
 

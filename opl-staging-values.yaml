@@ -107,10 +107,10 @@ non_privilege_container:
 # Follow Blazemeter guide for more information: https://help.blazemeter.com/docs/guide/private-locations-install-blazemeter-agent-for-kubernetes-for-mock-services.html
 
 service_virtualization: 
-  enable: no
-  ingressType:          # nginx or istio 
-  credentialName:       # "wildcard-credential"
-  web_expose_subdomain: # "mydomain.local"
+  enable: yes
+  ingressType: istio         # nginx or istio 
+  credentialName: wildcard-credential      # "wildcard-credential"
+  web_expose_subdomain: manan.local # "mydomain.local"
 
 
 # Labels to add to crane and child resources created by Crane, must be in JSON format.

@@ -118,8 +118,8 @@ labelsCrane:
   enable: no
   syntax: {"label_1": "label_1_value", "label_2": "label_2_value"}
 labelsExecutors:
-  enable: no
-  syntax: {"label_1": "label_1_value", "label_2": "label_2_value"}
+  enable: yes
+  syntax: { "demo": "value" }
 
 #Set to specify the tolerations for the crane and child resources. Must be in JSON format.
 tolerationCrane: 

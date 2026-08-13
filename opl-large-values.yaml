@@ -97,7 +97,7 @@ gridProxy:
 # This will run all pods/containers (related to private location installation)as well as crane within the cluster as non_root. 
 # Non-root deployment requires qualifying plan and an additional feature to be enabled, please contact support for enabling this feature if your account has a qualifying plan. 
 non_privilege_container:
-  enable: no
+  enable: yes
   runAsGroup: 1337
   runAsUser: 1337
 

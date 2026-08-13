@@ -43,7 +43,7 @@ imageOverride:
   #executorImages:                        # {"taurus-cloud:latest": "pathToYourRepo/<image_name:version_number>", "torero:latest": "pathToYourRepo/<image_name:version_number>", "blazemeter/service-mock:latest": "pathToYourRepo/<image_name:version_number>", "blazemeter/mock-pc-service:latest": "pathToYourRepo/<image_name:version_number>", "blazemeter/sv-bridge:latest": "pathToYourRepo/<image_name:version_number>", "blazemeter/doduo:latest": "pathToYourRepo/<image_name:version_number>"}
   executorImages:
     crane:latest:              # "pathToYourRepo/crane:version" 
-    taurus-cloud:latest: #gcr.io/verdant-bulwark-278/blazemeter/v4:2.4.498-MOB-52862_eux-2-reduced
+    taurus-cloud:latest: gcr.io/verdant-bulwark-278/blazemeter/taurus-cloud:2.4.498-MOB-52862_eux-2-reduced
     torero:latest:             #"pathToYourRepo/torero:version"
     service-mock:latest:       # "pathToYourRepo/service-mock:version"
     sv-bridge:latest:          # "pathToYourRepo/sv-bridge:version"

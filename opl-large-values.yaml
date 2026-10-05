@@ -43,16 +43,8 @@ imageOverride:
   #executorImages:                        # {"taurus-cloud:latest": "pathToYourRepo/<image_name:version_number>", "torero:latest": "pathToYourRepo/<image_name:version_number>", "blazemeter/service-mock:latest": "pathToYourRepo/<image_name:version_number>", "blazemeter/mock-pc-service:latest": "pathToYourRepo/<image_name:version_number>", "blazemeter/sv-bridge:latest": "pathToYourRepo/<image_name:version_number>", "blazemeter/doduo:latest": "pathToYourRepo/<image_name:version_number>"}
   executorImages:
   #  blazemeter/taurus-cloud:latest:       # "pathToYourRepo/taurus-cloud:version"
-    blazemeter/taurus-cloud:latest:       blazemeter-docker-remote.artifactory-np.foc.zone/verdant-bulwark-278/blazemeter/v4:latest
-    blazemeter/v4:latest:                 blazemeter-docker-remote.artifactory-np.foc.zone/verdant-bulwark-278/blazemeter/v4:latest
-    blazemeter/secrets:latest:            blazemeter-docker-remote.artifactory-np.foc.zone/verdant-bulwark-278/blazemeter/secrets:latest
-    blazemeter/proxy-recorder:latest:     blazemeter-docker-remote.artifactory-np.foc.zone/verdant-bulwark-278/blazemeter/proxy-recorder:latest
-    blazemeter/service-mock:latest:       blazemeter-docker-remote.artifactory-np.foc.zone/verdant-bulwark-278/blazemeter/service-mock:latest
-    blazemeter/sv-bridge:latest:          blazemeter-docker-remote.artifactory-np.foc.zone/verdant-bulwark-278/blazemeter/sv-bridge:latest
-    blazemeter/group-gateway:latest:      blazemeter-docker-remote.artifactory-np.foc.zone/verdant-bulwark-278/blazemeter/group-gateway:latest
-    blazemeter/doduo:latest:              blazemeter-docker-remote.artifactory-np.foc.zone/verdant-bulwark-278/blazemeter/doduo:latest
-    blazemeter/apm:latest:                blazemeter-docker-remote.artifactory-np.foc.zone/verdant-bulwark-278/blazemeter/apm:latest
-    blazemeter/secrets-manager:           blazemeter-docker-remote.artifactory-np.foc.zone/verdant-bulwark-278/blazemeter/secrets-manager:latest
+    blazemeter/taurus-cloud:latest:       gcr.io/verdant-bulwark-278/blazemeter/v4:2.4.540-reduced
+    blazemeter/v4:latest:                 gcr.io/verdant-bulwark-278/blazemeter/v4:2.4.540-reduced
   # CHECK VERSION IN THE RSS FEED  
   # blazemeter/charmander/microsoftedge_128.0.2739.81:latest:    # "pathToYourRepo/charmander/microsoftedge_128.0.2739.81:version"
   # blazemeter/charmander/safari_15.0:latest:                    # "pathToYourRepo/charmander/safari_15.0:version"

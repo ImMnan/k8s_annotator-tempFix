@@ -33,10 +33,10 @@ env:
 # Allows the override of the default image received from BZA for the container to run. Set the key to the original value (Example: apm-image:latest). Set the value to the new repository name with a tag. Extract the appropriate version number from 'admin/ship-stats'.
 imageOverride:
                                           # Add the details below to override the default image used by Crane and default configuration.
-  docker_registry: gcr.io/verdant-bulwark-278                     # Example: "gcr.io/<custom-registry>"
-  craneImage: gcr.io/verdant-bulwark-278/blazemeter/crane                            # Example: "gcr.io/<custom-registry>/blazemeter/crane"
-  tag: 3.8.4                                   # Default: "latest-master"
-  auto_update: false                           # Default: true
+  docker_registry: #gcr.io/verdant-bulwark-278                     # Example: "gcr.io/<custom-registry>"
+  craneImage: #gcr.io/verdant-bulwark-278/blazemeter/crane                            # Example: "gcr.io/<custom-registry>/blazemeter/crane"
+  tag: #3.8.4                                   # Default: "latest-master"
+  auto_update: #false                           # Default: true
   auto_update_running_containers:         # Controls auto update of components, default false. Also, either AUTO_UPDATE or AUTO_KUBERNETES_UPDATE must be true for this option to work, depending on the platform Crane is running on.
                                           # Example: {"blazemeter/crane:latest":"gcr.io/verdant-bulwark-278/blazemeter/crane:3.6.47"}
   pullPolicy:                             # Default: "Always"
